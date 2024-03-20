@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyAcademyPortfolioProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TblAbouts">
+    <Key>
+      <PropertyRef Name="AboutId" />
+    </Key>
+    <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TblCategories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblContacts">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblCustomer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="TblExperiences">
+    <Key>
+      <PropertyRef Name="ExperienceId" />
+    </Key>
+    <Property Name="ExperienceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StartYear" Type="int" />
+    <Property Name="EndYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Company" Type="nvarchar" MaxLength="100" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblFeatures">
+    <Key>
+      <PropertyRef Name="FeatureId" />
+    </Key>
+    <Property Name="FeatureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblMessages">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="MessageContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblProjects">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="GithubUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblServices">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TblSkills">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Name="SkillId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="TblSocialMedias">
+    <Key>
+      <PropertyRef Name="SocialMediaId" />
+    </Key>
+    <Property Name="SocialMediaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SocialMediaName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblTeams">
+    <Key>
+      <PropertyRef Name="TeamId" />
+    </Key>
+    <Property Name="TeamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Decription" Type="nvarchar" MaxLength="150" />
+    <Property Name="TwitterUrl" Type="nvarchar(max)" />
+    <Property Name="FacebookUrl" Type="nvarchar(max)" />
+    <Property Name="LinkedinUrl" Type="nvarchar(max)" />
+    <Property Name="InstagramUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblTestimonials">
+    <Key>
+      <PropertyRef Name="TestimonialId" />
+    </Key>
+    <Property Name="TestimonialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CommentDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_TblProjects_TblCategories">
+    <End Role="TblCategories" Type="Self.TblCategories" Multiplicity="0..1" />
+    <End Role="TblProjects" Type="Self.TblProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCategories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="TblProjects">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyAcademyPortfolioProjectModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAbouts" EntityType="Self.TblAbouts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCategories" EntityType="Self.TblCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblContacts" EntityType="Self.TblContacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCustomer" EntityType="Self.TblCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblExperiences" EntityType="Self.TblExperiences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblFeatures" EntityType="Self.TblFeatures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMessages" EntityType="Self.TblMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProjects" EntityType="Self.TblProjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblServices" EntityType="Self.TblServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblSkills" EntityType="Self.TblSkills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblSocialMedias" EntityType="Self.TblSocialMedias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTeams" EntityType="Self.TblTeams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTestimonials" EntityType="Self.TblTestimonials" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TblProjects_TblCategories" Association="Self.FK_TblProjects_TblCategories">
+      <End Role="TblCategories" EntitySet="TblCategories" />
+      <End Role="TblProjects" EntitySet="TblProjects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,37 @@
+﻿@model List<MyPortfolio.Models.TblAbouts>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<h3>Hakkımda Sayfası</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Resim</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)  // foreach döngüsüne en yukarda çağırdığım modeli (tblabout sınıfını) inject ederim
+    {
+        <tr>
+            <td>@item.AboutId</td>
+            <td>@item.ImageUrl</td>  @*  @item.   dediğimiz zaman tablodaki değerler otomatik gelecektir  *@
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-outline-info">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+
+@*  html sayfası içerisinde @ kullanarak c# kodları yazabiliriz mesela dönüler metotlar diziler vs için başına @ ekleriz  *@
+
+<br />
+<button class="btn btn-outline-dark">Yeni Hakkımda Bölümü Ekle</button>
