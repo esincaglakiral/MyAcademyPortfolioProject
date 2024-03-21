@@ -1,4 +1,4 @@
-﻿@model List<MyPortfolio.Models.TblAbouts>
+﻿@model List<MyPortfolio.Models.TblAbouts>   
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -24,8 +24,8 @@
             <td>@item.ImageUrl</td>  @*  @item.   dediğimiz zaman tablodaki değerler otomatik gelecektir  *@
             <td>@item.Title</td>
             <td>@item.Description</td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-info">Güncelle</a></td>
+            <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a  href="/About/UpdateAbout/@item.AboutId" class="btn btn-outline-info">Güncelle</a></td>
 
         </tr>
     }
@@ -34,4 +34,4 @@
 @*  html sayfası içerisinde @ kullanarak c# kodları yazabiliriz mesela dönüler metotlar diziler vs için başına @ ekleriz  *@
 
 <br />
-<button class="btn btn-outline-dark">Yeni Hakkımda Bölümü Ekle</button>
+<a href="/About/AddAbout" class="btn btn-outline-dark">Yeni Hakkımda Bölümü Ekle</a>
