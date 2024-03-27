@@ -1,0 +1,52 @@
+﻿@model List<MyPortfolio.Models.TblExperiences>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h3>Deneyimlerim Sayfası</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlangıç Yılı</th>
+        <th>Bitiş Yılı</th>
+        <th>Pozisyon</th>
+        <th>Açıklama</th>
+        <th>Şirket Adı</th>
+        <th>Konum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        @*<th>Aktif Yap</th>
+        <th>Pasif Yap</th>*@
+
+    </tr>
+
+    @foreach (var item in Model)  
+    {
+        <tr>
+            <td>@item.ExperienceId</td>
+            <td>@item.StartYear</td>  @*  @item.   dediğimiz zaman tablodaki değerler otomatik gelecektir  *@
+            <td>@item.EndYear</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Company</td>
+            <td>@item.Location</td>
+
+            @*<td>@( item.Status == true ? "Aktif" : "Pasif" )</td>*@
+            <td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-outline-info">Güncelle</a></td>
+            @*<td><a href="/Service/MakeActive/@item.ServiceId" class="btn btn-outline-success">Aktif</a></td>
+            <td><a href="/Service/MakePassive/@item.ServiceId" class="btn btn-outline-secondary">Pasif</a></td>*@
+        </tr>
+    }
+</table>
+
+@*  html sayfası içerisinde @ kullanarak c# kodları yazabiliriz mesela dönüler metotlar diziler vs için başına @ ekleriz  *@
+
+<br />
+<a href="/Experience/AddExperience" class="btn btn-outline-dark">Yeni Deneyim Bölümü Ekle</a>
+

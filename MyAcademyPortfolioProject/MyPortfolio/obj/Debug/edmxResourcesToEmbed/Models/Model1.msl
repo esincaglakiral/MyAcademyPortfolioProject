@@ -98,6 +98,7 @@
     <EntitySetMapping Name="TblServices">
       <EntityTypeMapping TypeName="MyAcademyPortfolioProjectModel.TblServices">
         <MappingFragment StoreEntitySet="TblServices">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
           <ScalarProperty Name="Icon" ColumnName="Icon" />
           <ScalarProperty Name="Title" ColumnName="Title" />

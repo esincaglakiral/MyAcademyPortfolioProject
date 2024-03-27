@@ -93,6 +93,7 @@
     <Property Name="Icon" Type="nvarchar" MaxLength="50" />
     <Property Name="Title" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="TblSkills">
     <Key>

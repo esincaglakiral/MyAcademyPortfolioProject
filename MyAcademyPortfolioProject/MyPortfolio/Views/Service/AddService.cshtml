@@ -1,0 +1,23 @@
+﻿@model MyPortfolio.Models.TblServices
+
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<br />
+<h2>Hizmet Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Hizmet Adı</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Kaydet</button>
+
+</form>
+
