@@ -21,5 +21,6 @@ namespace MyPortfolio.Models
         public string Description { get; set; }
         public string Company { get; set; }
         public string Location { get; set; }
+        public Nullable<bool> IsContinuing { get; set; }
     }
 }

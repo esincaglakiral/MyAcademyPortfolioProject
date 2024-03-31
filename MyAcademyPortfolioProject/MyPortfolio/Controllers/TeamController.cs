@@ -32,7 +32,7 @@ namespace MyPortfolio.Controllers
         }
 
 
-        public ActionResult DeleteMessage(int id)
+        public ActionResult DeleteTeam(int id)
         {
             var team = db.TblTeams.Find(id);
             db.TblTeams.Remove(team); // bulduğu değeri Remove metodu ile siler yani önce id den gelen değeri bulur sonra siler

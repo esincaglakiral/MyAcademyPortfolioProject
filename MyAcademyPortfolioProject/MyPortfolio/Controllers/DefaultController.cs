@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MyPortfolio.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
@@ -14,6 +15,8 @@ namespace MyPortfolio.Controllers
         MyAcademyPortfolioProjectEntities db = new MyAcademyPortfolioProjectEntities();
         public ActionResult Index()
         {
+            var values = db.TblTestimonials.Where(x => x.Status == true).ToList();
+
             return View();
         }
 
@@ -64,6 +67,24 @@ namespace MyPortfolio.Controllers
         }
 
 
+        public PartialViewResult DefaultExperiencePartial()
+        {
+         
+            var values = db.TblExperiences.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult DefaultTestimonialPartial()
+        {
+
+            var values = db.TblTestimonials.Where(x => x.Status == true).ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult DefaultTeamPartial()
+        {
+
+            var values = db.TblTeams.ToList();
+            return PartialView(values);
+        }
 
 
     }

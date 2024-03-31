@@ -52,12 +52,25 @@ namespace MyPortfolio.Controllers
         public ActionResult UpdateExperience(TblExperiences experiences)  // güncelleme işlemi yapmak için
         {
             var value = db.TblExperiences.Find(experiences.ExperienceId); // value değişkenine aboutid den gelen değerleri bulup ata
-            value.StartYear = experiences.StartYear;  // parametrelerime atamalarımı yaptım
-            value.EndYear = experiences.EndYear;
+            value.StartYear = experiences.StartYear;  // parametrelerime atamalarımı yaptım                                                                              
+                                                      //value.EndYear = experiences.EndYear;
+
+
+            if (experiences.EndYear == "Devam Ediyor") // "Bitiş Yılı" seçeneği "Devam Ediyor" olarak seçilmişse
+            {
+                value.EndYear = "Devam Ediyor"; // Bitiş yılı değerini null yap
+            }
+            else // Diğer durumlar için
+            {
+                value.EndYear = experiences.EndYear; // Bitiş yılı değerini kullanıcının seçtiği değere göre ayarla
+            }
+
             value.Title = experiences.Title;
             value.Description = experiences.Description;
             value.Company = experiences.Company;
             value.Location = experiences.Location;
+
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

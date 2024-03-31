@@ -4,14 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyPortfolio.Models;
+using MyPortfolio.Settings;
 
 namespace MyPortfolio.Controllers
 {
+    //[Authorize]
+    [SessionTimeOut] //Custom Filter oluşturmuş olduk
     public class AboutController : Controller
     {
         MyAcademyPortfolioProjectEntities db = new MyAcademyPortfolioProjectEntities();  // db nesnesi türetiyoruz
         public ActionResult Index()
         {
+       
             var values = db.TblAbouts.ToList(); // tblabouts tablosundaki değerleri ToList metoduyla listelemek için values değerine atadık
             return View(values); // değeri döndürmek için
         }

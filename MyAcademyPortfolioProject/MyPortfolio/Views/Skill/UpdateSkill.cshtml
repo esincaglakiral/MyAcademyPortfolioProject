@@ -1,0 +1,34 @@
+﻿@model MyPortfolio.Models.TblSkills
+
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>Teknoloji Bilgisi Güncelleme Sayfası</h2>
+
+
+<form method="post" id="skillForm">
+    <input type="hidden" name="SkillId" value="@Model.SkillId" />
+    <label>Teknoloji Adı</label>
+    <input type="text" name="SkillName" value="@Model.SkillName" class="form-control" />
+    <br />
+    <label>Başarı Değeri</label>
+    <input type="text" name="Value" value="@Model.Value" class="form-control" id="successValue" required />
+    <br />
+    <button type="submit" class="btn btn-outline-success">Güncelle</button>
+</form>
+
+<script>
+    document.getElementById('skillForm').onsubmit = function(e) {
+        var successValue = document.getElementById('successValue').value;
+        // Sayısal değer kontrolü ve 1 ile 100 arasında olup olmadığını kontrol ediyoruz
+        if (!successValue.match(/^\d+$/) || successValue < 1 || successValue > 100) {
+            e.preventDefault(); // Form gönderimini durduruyoruz
+            alert('Başarı Değeri 1 ile 100 arasında bir sayı olmalıdır.');
+        }
+    };
+</script>
+

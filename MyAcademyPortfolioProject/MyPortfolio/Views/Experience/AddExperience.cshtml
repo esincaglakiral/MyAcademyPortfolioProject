@@ -10,20 +10,23 @@
 <h2>Deneyim Ekleme Sayfası</h2>
 
 <form method="post">
+  
     <label>Başlangıç Yılı</label>
-    <input type="date" id="startYearPicker" name="startYearPicker" onchange="extractYear()" class="form-control" />
-    <input type="hidden" id="StartYear" name="StartYear" />
-
-    <script>
-        function extractYear() {
-            var date = document.getElementById('startYearPicker').value;
-            var year = new Date(date).getFullYear();
-            document.getElementById('StartYear').value = year; // Gizli alana yıl değerini ata
+    <select id="StartYear" name="StartYear" class="form-control">
+        @for (int i = DateTime.Now.Year; i >= DateTime.Now.Year - 100; i--)
+        {
+            <option value="@i">@i</option>
         }
-    </script>
+    </select>
     <br />
     <label>Bitiş Yılı</label>
-    <input type="text" name="EndYear" class="form-control" />
+    <select id="EndYear" name="EndYear" class="form-control">
+        <option value="Devam Ediyor">Devam Ediyor</option>
+        @for (int i = DateTime.Now.Year; i >= DateTime.Now.Year - 100; i--)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
     <br />
     <label>Pozisyon</label>
     <input type="text" name="Title" class="form-control" />

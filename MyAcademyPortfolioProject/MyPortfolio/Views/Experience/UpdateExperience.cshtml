@@ -1,0 +1,62 @@
+﻿@model MyPortfolio.Models.TblExperiences
+
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>Deneyim Güncelleme Sayfası</h2>
+
+<form method="post">
+    <input type="hidden" name="ExperienceId" value="@Model.ExperienceId" />
+
+    <label>Başlangıç Yılı</label>
+    <select id="yearPicker" name="StartYear" class="form-control">
+        @{
+            // Başlangıç yılı için dropdown oluşturma
+            var currentYear = DateTime.Now.Year;
+            var earliestYear = currentYear - 100; // Geçerli yıldan 100 yıl önceye kadar olan yılları göster
+        }
+        @for (var year = currentYear; year >= earliestYear; year--)
+        {
+            <option value="@year" @(year == Model.StartYear ? "selected" : "")>@year</option>
+        }
+    </select>
+
+    <br />
+
+
+
+    <label>Bitiş Yılı</label>
+        <select id="endYearPicker" name="EndYear" class="form-control">
+            <option value="Devam Ediyor" @(Model.EndYear == "Devam Ediyor" ? "selected" : "")>Devam Ediyor</option>
+            @{
+                var currentEndYear = DateTime.Now.Year;
+                var earliestEndYear = currentEndYear - 100;
+            }
+
+            @for (var year = currentEndYear; year >= earliestEndYear; year--)
+            {
+                <option value="@year" @(Model.EndYear == year.ToString() ? "selected" : "")>@year</option>
+            }
+        </select>
+        <br />
+
+    
+
+    <label>Pozisyon</label>
+    <input type="text" name="Title" value="@Model.Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" value="@Model.Description" class="form-control" />
+    <br />
+    <label>Şirket Adı</label>
+    <input type="text" name="Company" value="@Model.Company" class="form-control" />
+    <br />
+    <label>Konum</label>
+    <input type="text" name="Location" value="@Model.Location" class="form-control" />
+    <br />
+    <button class="btn btn-outline-info">Güncelle</button>
+</form>

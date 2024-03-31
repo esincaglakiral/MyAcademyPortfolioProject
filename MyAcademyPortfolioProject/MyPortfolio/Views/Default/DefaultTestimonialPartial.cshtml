@@ -1,0 +1,79 @@
+﻿@model List<MyPortfolio.Models.TblTestimonials>
+
+<div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
+    <div class="container">
+        <div class="testimonial-icon">
+            <i class="fa fa-quote-left"></i>
+        </div>
+        <div class="owl-carousel testimonials-carousel">
+            @foreach (var item in Model)
+            {
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="@item.ImageUrl" alt="Image">
+                    </div>
+                    <div class="testimonial-text">
+                        <p>@item.Comment</p>
+                        <h3>@item.NameSurname</h3>
+                        <h4>@item.Title</h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.testimonials-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 7000, // 7 saniyede bir otomatik kaydırma
+                autoplayHoverPause: true,
+                nav: false,
+                dots: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    768: {
+                        items: 1,
+                    },
+                    1000: {
+                        items: 1,
+                    }
+                }
+            });
+        });
+        $(document).ready(function () {
+            $('.btn-outline-success').click(function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $.get(url, function (response) {
+                    if (response.success) {
+                        // Başarılı AJAX çağrısı yapıldığında UI'yı güncelle
+                        if (response.status === "active") {
+                            // Aktif yapıldığında UI'da değişiklik
+                        }
+                    }
+                });
+            });
+
+            $('.btn-outline-secondary').click(function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $.get(url, function (response) {
+                    if (response.success) {
+                        // Başarılı AJAX çağrısı yapıldığında UI'yı güncelle
+                        if (response.status === "passive") {
+                            // Pasif yapıldığında UI'da değişiklik
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

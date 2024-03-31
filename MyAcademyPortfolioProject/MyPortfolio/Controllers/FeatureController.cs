@@ -1,12 +1,16 @@
-﻿using MyPortfolio.Models;
+﻿
+using MyPortfolio.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MyPortfolio.Controllers
 {
+    [Authorize]
     public class FeatureController : Controller
     {
         MyAcademyPortfolioProjectEntities db = new MyAcademyPortfolioProjectEntities();  //db nesnesi türetiriz
@@ -26,11 +30,12 @@ namespace MyPortfolio.Controllers
         [HttpPost]
         public ActionResult AddFeature(TblFeatures features)
         {
-       
+
             db.TblFeatures.Add(features);
             db.SaveChanges();
             return RedirectToAction(nameof(Index));  // return RedirectToAction("Index"); ifadesiyle bu ifade aynı anlamda ikisi de kullanılabilir.
         }
+
 
 
         public ActionResult DeleteFeature(int id)

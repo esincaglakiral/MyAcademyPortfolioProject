@@ -50,7 +50,7 @@ namespace MyPortfolio.Controllers
 
 
         [HttpPost]
-        public ActionResult UpdateExperience(TblMessages messages)  // güncelleme işlemi yapmak için
+        public ActionResult UpdateMessage(TblMessages messages)  // güncelleme işlemi yapmak için
         {
             var value = db.TblMessages.Find(messages.MessageId); // value değişkenine aboutid den gelen değerleri bulup ata
             value.Name = messages.Name;  // parametrelerime atamalarımı yaptım

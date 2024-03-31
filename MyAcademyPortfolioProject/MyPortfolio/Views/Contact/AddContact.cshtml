@@ -1,0 +1,39 @@
+﻿@model MyPortfolio.Models.TblContacts
+
+@{
+    ViewBag.Title = "AddContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>İletişim Bilgisi Ekleme Sayfası</h2>
+
+<form method="post" id="contactForm">
+    <label>Ad Soyad</label>
+    <input type="text" name="NameSurname" class="form-control" />
+    <br />
+    <label>Adres</label>
+    <input type="text" name="Adress" class="form-control" />
+    <br />
+    <label>Telefon Numarası</label>
+    <input type="text" name="Phone" class="form-control" id="phone-input" pattern="\(\d{3}\) \d{3}-\d{4}" title="(999) 999-9999 formatında olmalıdır." required />
+    <br />
+    <label>Email</label>
+    <input type="email" name="Email" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-outline-success">Kaydet</button>
+</form>
+
+<script>
+    document.getElementById('contactForm').onsubmit = function (e) {
+        var phoneInput = document.getElementById('phone-input');
+        var pattern = phoneInput.pattern;
+        var value = phoneInput.value;
+        var regex = new RegExp(pattern);
+        if (!regex.test(value)) {
+            e.preventDefault(); // Form gönderimini durdur
+            alert('Telefon numarası (999) 999-9999 formatında olmalıdır.');
+        }
+    };
+</script>

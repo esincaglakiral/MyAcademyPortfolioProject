@@ -51,11 +51,12 @@
     </Key>
     <Property Name="ExperienceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StartYear" Type="Int32" />
-    <Property Name="EndYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EndYear" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsContinuing" Type="Boolean" />
   </EntityType>
   <EntityType Name="TblFeatures">
     <Key>
@@ -171,5 +172,14 @@
       <End Role="TblCategories" EntitySet="TblCategories" />
       <End Role="TblProjects" EntitySet="TblProjects" />
     </AssociationSet>
+    <EntitySet Name="TblAdmins" EntityType="MyAcademyPortfolioProjectModel.TblAdmins" />
   </EntityContainer>
+  <EntityType Name="TblAdmins">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

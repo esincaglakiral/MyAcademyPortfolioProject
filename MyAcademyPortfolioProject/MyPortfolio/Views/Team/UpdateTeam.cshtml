@@ -1,0 +1,43 @@
+﻿@model MyPortfolio.Models.TblTeams
+
+@{
+    ViewBag.Title = "UpdateTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>Takım Arkadaşı Güncelleme Sayfası</h2>
+
+
+    <form method="post" id="teamForm">
+        <input type="hidden" name="TeamId" value="@Model.TeamId" />
+        <label>Resim Url</label>
+        <input type="url" name="ImageUrl" value="@Model.ImageUrl" class="form-control" required />
+        <br />
+        <label>Ad Soyad</label>
+        <input type="text" name="NameSurname" value="@Model.NameSurname" class="form-control" required />
+        <br />
+        <label>Meslek</label>
+        <input type="text" name="Title" value="@Model.Title" class="form-control" required />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" name="Decription" value="@Model.Decription" class="form-control" required />
+        <br />
+        <label>Twitter Url</label>
+        <input type="url" name="TwitterUrl" value="@Model.TwitterUrl" class="form-control" required />
+        <br />
+        <label>Facebook Url</label>
+        <input type="url" name="FacebookUrl" value="@Model.FacebookUrl" class="form-control" required />
+        <br />
+        <label>Linkedin Url</label>
+        <input type="url" name="LinkedinUrl" value="@Model.LinkedinUrl" class="form-control" required />
+        <br />
+        <label>Instagram Url</label>
+        <input type="text" name="InstagramUrl" value="@Model.InstagramUrl" class="form-control" required />
+        <br />
+        <button type="submit" class="btn btn-outline-success">Güncelle</button>
+    </form>
+
+
+

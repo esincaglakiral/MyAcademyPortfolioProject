@@ -81,3 +81,9 @@ D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioPro
 D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\EntityFramework.SqlServer.dll
 D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\EntityFramework.xml
 D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\EntityFramework.SqlServer.xml
+D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\FluentValidation.dll
+D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\System.Threading.Tasks.Extensions.dll
+D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\FluentValidation.xml
+D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Software_workspaces\Net Core Project\MY YAZILIM PROJECT\MyAcademyPortfolioProject\MyPortfolio\bin\System.Threading.Tasks.Extensions.xml

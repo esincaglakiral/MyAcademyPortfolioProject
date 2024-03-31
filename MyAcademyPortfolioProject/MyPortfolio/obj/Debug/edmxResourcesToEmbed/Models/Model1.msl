@@ -53,6 +53,7 @@
     <EntitySetMapping Name="TblExperiences">
       <EntityTypeMapping TypeName="MyAcademyPortfolioProjectModel.TblExperiences">
         <MappingFragment StoreEntitySet="TblExperiences">
+          <ScalarProperty Name="IsContinuing" ColumnName="IsContinuing" />
           <ScalarProperty Name="ExperienceId" ColumnName="ExperienceId" />
           <ScalarProperty Name="StartYear" ColumnName="StartYear" />
           <ScalarProperty Name="EndYear" ColumnName="EndYear" />
@@ -150,6 +151,15 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CommentDate" ColumnName="CommentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAdmins">
+      <EntityTypeMapping TypeName="MyAcademyPortfolioProjectModel.TblAdmins">
+        <MappingFragment StoreEntitySet="TblAdmins">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

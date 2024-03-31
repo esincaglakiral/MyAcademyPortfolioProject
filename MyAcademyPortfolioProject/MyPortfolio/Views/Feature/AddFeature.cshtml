@@ -1,0 +1,45 @@
+﻿@model MyPortfolio.Models.TblFeatures
+@{
+    ViewBag.Title = "AddFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>Öne Çıkan Bilgisi Ekleme Sayfası</h2>
+
+<form method="post" id="featureForm" enctype="multipart/form-data">
+    <label>Ad Soyad</label>
+    <input type="text" name="NameSurname" class="form-control" />
+    <br />
+    <label>Meslek</label>
+    <input type="text" name="Title" class="form-control" />
+
+    <br />
+    <label>Resim URL</label>
+    <input type="url" name="ImageUrl" class="form-control" id="imageUrl" placeholder="http://örnek.com/resim.jpg" oninput="checkInput()" />
+    @Html.ValidationMessageFor(x => x.ImageUrl, "", new { @class = "text-danger" })
+
+    <br />
+    <button type="submit" class="btn btn-outline-success">Kaydet</button>
+</form>
+
+<script>
+    function checkInput() {
+        var fileInput = document.getElementById('imageFile');
+        var urlInput = document.getElementById('imageUrl');
+
+        if (fileInput.value) {
+            urlInput.disabled = true;
+        } else {
+            urlInput.disabled = false;
+        }
+
+        if (urlInput.value) {
+            fileInput.disabled = true;
+        } else {
+            fileInput.disabled = false;
+        }
+    }
+
+</script>
